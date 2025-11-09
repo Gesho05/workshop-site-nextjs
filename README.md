@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## workshop-site-nextjs
 
-## Getting Started
+A small Next.js (App Router) site built with TypeScript. This repository contains a minimal workshop/demo site with a few pages (home, products, contact) and a simple component layout.
 
-First, run the development server:
+Designed for local development, demos, and as a starter for small projects or workshops.
+
+---
+
+## Quick start
+
+Requirements:
+- Node.js (18+ recommended)
+- npm (or yarn / pnpm)
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Available scripts (from package.json):
+- `dev` — start Next.js in development with Turbopack
+- `build` — build the production app
+- `start` — run the built production server
+- `lint` — run ESLint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project structure (important files)
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — Next.js App Router pages and layout
+  - `page.tsx` — homepage
+  - `layout.tsx` — global layout and metadata
+  - `components/` — header/footer shared components
+  - `contact/page.tsx`, `products/page.tsx` — example pages
+- `public/` — static assets (icons, images)
+- `globals.css` — global styles
+- `next.config.ts`, `tsconfig.json` — Next.js and TypeScript config
+- `package.json` — scripts and dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses React 19 and Next 15 (App Router + TypeScript).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Styling & tools
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- PostCSS is configured (`postcss.config.mjs`). Tailwind is present in devDependencies but not required to run unless you add Tailwind classes. If you plan to use Tailwind, ensure `tailwind.config.js` is added and `globals.css` imports the Tailwind directives.
+- ESLint is configured (see `eslint.config.mjs`). Run `npm run lint` to check code style.
